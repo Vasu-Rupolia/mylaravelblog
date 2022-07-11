@@ -46,17 +46,13 @@ class BlogController extends Controller
         $request->validate([
             'post_title' => 'required',
             'post_content' => 'required',
-            'blogimage' =>'required|mimes:jpg,png,jpeg|max:5048']
+            ]
         );
-
-        $newImageName = time() . "-" . $request->post_title . "." . $request->blogimage->extension();
-        $request->blogimage->move(public_path('blogimages'), $newImageName);
 
         $post = new Blog;
         $post->blogtitle = $request->post_title;
         $post->blogcontent = $request->post_content;
-        $post->blogimage = $newImageName;
-
+        
         $post->save();
         return redirect('/show_posts');
         //return view('create_post', array('data' => $request));
