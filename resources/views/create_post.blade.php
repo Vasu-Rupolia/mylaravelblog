@@ -6,7 +6,7 @@
                 <br />
                 <textarea name="post_content" id="myEditor" placeholder="Enter the title">
                 </textarea>
-                <input type="file" name = "blogimage" />
+                <!--<input type="file" name = "blogimage" />-->
                 <!--<input type="file" name="blogimage" required>-->
                 <button type="submit" class="buttons" id="submit" name="submit">Submit</button>
             </form>
